@@ -2,7 +2,7 @@ module Main exposing (main)
 
 import Browser
 import Html exposing (Html, button, div, img, input, text)
-import Html.Attributes exposing (class, placeholder, src, type_, value)
+import Html.Attributes exposing (class, placeholder, src, style, type_, value)
 import Html.Events exposing (onClick, onInput)
 import Maybe exposing (withDefault)
 import Round
@@ -145,9 +145,14 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div [ class "bg-[#C5E4E7] h-full overflow-auto flex flex-col" ]
-        [ div [ class "py-12" ] [ img [ src "/logo.svg", class "mx-auto" ] [] ]
+        [ div [ class "pt-[10.1875rem] pb-[5.49125rem]" ] [ img [ src "/logo.svg", class "mx-auto" ] [] ]
         , div [ class "lg:self-center lg:max-w-[57.5rem]" ]
-            [ div [ class "bg-white flex flex-col flex-1 rounded-3xl p-8 h-auto lg:gap-12 lg:flex-row lg:flex" ]
+            [ div
+                [ class "bg-white flex flex-col flex-1 rounded-3xl p-8 h-auto lg:gap-12 lg:flex-row lg:flex"
+                , style
+                    "box-shadow"
+                    "0px 32px 43px rgba(79, 166, 175, 0.200735)"
+                ]
                 [ div [ class "lg:flex-1" ]
                     [ div []
                         [ div [ class "font-bold text-[#5E7A7D]" ] [ text "Bill" ]
@@ -161,7 +166,7 @@ view model =
                         ]
                     , div [ class "mt-8" ]
                         [ div [ class "font-bold text-[#5E7A7D]" ] [ text "Select Tip %" ]
-                        , div [ class "grid grid-cols-2 gap-4 mt-4" ]
+                        , div [ class "grid grid-cols-2 lg:grid-cols-3 gap-4 mt-4" ]
                             [ viewButton "5%" (.tip model == Tip5) (ChangeTip Tip5)
                             , viewButton "10%" (.tip model == Tip10) (ChangeTip Tip10)
                             , viewButton "15%" (.tip model == Tip15) (ChangeTip Tip15)
