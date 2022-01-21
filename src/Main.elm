@@ -145,7 +145,7 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div [ class "bg-[#C5E4E7] h-full overflow-auto flex flex-col" ]
-        [ div [ class "pt-[10.1875rem] pb-[5.49125rem]" ] [ img [ src "/logo.svg", class "mx-auto" ] [] ]
+        [ div [ class "py-12" ] [ img [ src "/logo.svg", class "mx-auto" ] [] ]
         , div [ class "lg:self-center lg:max-w-[57.5rem]" ]
             [ div
                 [ class "bg-white flex flex-col flex-1 rounded-3xl p-8 h-auto lg:gap-12 lg:flex-row lg:flex"
